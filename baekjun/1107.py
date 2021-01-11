@@ -11,7 +11,7 @@ broken_n = int(input())
 try : 
     broken_buttons = [i for i in map(int,input().split(' '))]
     answer = abs(100-n)
-    for i in range(1000001) : # 
+    for i in range(1000001) : # 나올수 있는 가장 큰 수는 500000이지만 9밖에 없다면 999999까지도 나올수 있다.
         if check(i,broken_buttons) : 
             answer = min(answer,len(str(i))+abs(n-i))
 except : 
