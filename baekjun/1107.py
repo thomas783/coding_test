@@ -1,3 +1,4 @@
+# 리모컨
 import sys
 input = sys.stdin.readline
 def check(num,broken_buttons) : # 하나씩 확인해보면서 하나라도 고장난 버튼을 누르면 넘어간다
