@@ -2,7 +2,7 @@ def make_calender(M,N,x,y) :
     if M < N : 
         M,N = N,M
         x,y = y,x
-    if y == N : 
+    if y == N : # 나머지가 0인 경우 고려
         y = 0
     for i in range(N) : 
         temp = i * M + x
