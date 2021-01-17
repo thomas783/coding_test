@@ -2,7 +2,7 @@
 
 import sys
 from collections import deque
-def check_ripe(farm,M,N,deq,num) : 
+def check_ripe(farm,M,N,deq,num) : # bfs 사용
     dx = [1,-1,0,0]
     dy = [0,0,1,-1]
     while deq : 
@@ -26,7 +26,7 @@ for i in range(N) :
     for j in range(M) : 
         if farm[i][j] == 1 : 
             deq.append([i,j,0])
-        if farm[i][j] == 0 : 
+        if farm[i][j] == 0 : # 총 없애야하는 안익은 토마토 개수 세기
             num += 1
 num,answer = check_ripe(farm,M,N,deq,num)
 if num == 0 :
