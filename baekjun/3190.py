@@ -16,6 +16,7 @@ maps = [[0 for _ in range(N)] for _ in range(N)]
 maps[0][0] = 1
 for i,j in apple : 
     maps[i][j] = 'A'
+
 dir = [[0,1],[1,0],[0,-1],[-1,0]]
 cur_dir = 0
 cur_idx = [0,0]
@@ -39,11 +40,11 @@ while True :
         cur_idx = [next_x,next_y]
         if maps[next_x][next_y] == 'A' : 
             maps[next_x][next_y] = 1
-        elif maps[next_x][next_y] == 0 : 
+        elif maps[next_x][next_y] == 0 :  
             maps[next_x][next_y] = 1
             temp = last_idx.pop(0)
             maps[temp[0]][temp[1]] = 0
-        else :
+        else : # 자기 자신과 만났을 경우
             print(time)
             break
     else : 
