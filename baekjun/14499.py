@@ -12,7 +12,6 @@ for i in range(K) :
     nx = x + dx[dir]
     ny = y + dy[dir]
     if not 0<=nx<M or not 0<=ny<N : 
-        print("fuck",nx,ny)
         continue
     if dir == 1 : # 동쪽으로 굴리는 경우
         dice[1],dice[3],dice[4],dice[6] = dice[4],dice[1],dice[6],dice[3]
