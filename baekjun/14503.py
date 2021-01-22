@@ -6,11 +6,9 @@ def clean(room,x,y,dir,visited) :
     dy = [-1,0,1,0]
     bx = [1,0,-1,0] # 후진 할 방향
     by = [0,-1,0,1]
-    global answer
     if room[x][y] == 0 : # 1번 조건
         if [x,y] not in visited : 
             visited.append([x,y])
-            answer += 1
     cnt = 0
     while cnt < 4 : 
         cnt += 1
@@ -39,9 +37,7 @@ N,M = map(int,sys.stdin.readline().rstrip().split(' '))
 x,y,dir = map(int,sys.stdin.readline().rstrip().split(' '))
 room = []
 visited = []
-answer = 0
 for _ in range(N) : 
     room.append(list(map(int,sys.stdin.readline().rstrip().split(' '))))
 clean(room,x,y,dir,visited)
-print(answer)
-print(visited,len(visited))
+print(len(visited))
