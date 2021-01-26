@@ -45,12 +45,10 @@ for _ in range(N) :
     maps.append(list(map(int,sys.stdin.readline().rstrip().split())))
 answer = 0
 for m in maps : 
-    print(check(m))
     if check(m) :
         answer += 1
 maps_transposed = list(map(list,zip(*maps)))
 for m in maps_transposed : 
-    print(check(m))
     if check(m) : 
         answer += 1
 print(answer)
