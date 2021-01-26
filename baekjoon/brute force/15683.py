@@ -1,4 +1,5 @@
 # 감시
+# pypy3으로 제출, python3는 시간초과...
 
 import sys, copy
 from collections import deque
