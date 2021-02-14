@@ -1,7 +1,7 @@
 # 인구 이동
 
 import sys
-from collections import defaultdict,deque
+from collections import deque
 def bfs(cur) : # bfs를 통해 연합을 찾아낸다.
     dx = [0,0,1,-1]
     dy = [1,-1,0,0]
@@ -10,11 +10,10 @@ def bfs(cur) : # bfs를 통해 연합을 찾아낸다.
     deq.append(cur)
     while deq : 
         x,y = deq.popleft()
-        val = area[x][y]
         for i in range(4) : 
             next_x = x + dx[i]
             next_y = y + dy[i]
-            if 0<=next_x<N and 0<=next_y<N and visited_all[next_x][next_y] == 0 and L<=abs(area[next_x][next_y]-val)<=R : 
+            if 0<=next_x<N and 0<=next_y<N and visited_all[next_x][next_y] == 0 and L<=abs(area[next_x][next_y]-area[x][y])<=R : 
                 visited_all[next_x][next_y] = 1
                 deq.append([next_x,next_y])
                 visited.append([next_x,next_y])
@@ -33,12 +32,12 @@ while True :
         for j in range(N) : 
             if visited_all[i][j] == 0 : 
                 visited_all[i][j] = 1
-            temp = bfs([i,j])
-            if len(temp) > 1 : 
-                isTrue = True
-                num = sum([area[x][y] for x,y in temp])//len(temp)
-                for x,y in temp : 
-                    area[x][y] = num
+                temp = bfs([i,j])
+                if len(temp) > 1 : 
+                    isTrue = True
+                    num = sum([area[x][y] for x,y in temp])//len(temp)
+                    for x,y in temp : 
+                        area[x][y] = num
     if not isTrue : 
         break
     answer += 1
