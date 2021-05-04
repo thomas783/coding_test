@@ -93,6 +93,7 @@ for i in range(m):
 
 picked = [False for _ in range(m)]
 
+
 def isin(y,x):
     if -1<y<n:
         if -1<x<n: return True
@@ -108,7 +109,7 @@ def bfs():
     table[sy][sx] = 0
     q.append([sy, sx])
     check[sy][sx] = True
-    
+
     while q:
         y, x = q.popleft()
 
@@ -130,7 +131,6 @@ def find_guest():
     global arr, f, picked 
     table = bfs()
     pq = []
-
     for i in range(m):
         if not picked[i]:
             y, x = srcs[i][0] - 1, srcs[i][1] - 1
@@ -142,7 +142,6 @@ def find_guest():
     dist, _, _, guest_index = heappop(pq)
     f -= dist
     picked[guest_index] = True
-
     return guest_index
 
 # 손님의 목적지까지 가는 함수
