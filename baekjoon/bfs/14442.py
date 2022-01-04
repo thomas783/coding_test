@@ -1,10 +1,6 @@
 # 벽 부수고 이동하기 2
 
 import sys
-input = sys.stdin.readline
-# 벽 부수고 이동하기
-
-import sys
 from collections import deque
 input = sys.stdin.readline
 n,m,k = map(int,input().split())
