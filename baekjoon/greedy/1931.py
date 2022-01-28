@@ -13,5 +13,4 @@ for i in range(n) :
     if conf[i][0] >= curr_time : 
         ans += 1
         curr_time = conf[i][1]
-print(conf)
 print(ans)
